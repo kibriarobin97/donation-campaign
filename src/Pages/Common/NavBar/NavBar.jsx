@@ -6,7 +6,7 @@ import {
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function NavList() {
     return (
@@ -17,9 +17,9 @@ function NavList() {
                 color="blue-gray"
                 className="p-1 font-medium"
             >
-                <a href="#" className="flex items-center hover:text-blue-500 transition-colors font-bold">
+                <NavLink to='/' className={({ isActive }) => isActive ? 'text-red-500 underline font-bold' : 'font-bold'}>
                     Home
-                </a>
+                </NavLink>
             </Typography>
             <Typography
                 as="li"
@@ -27,9 +27,9 @@ function NavList() {
                 color="blue-gray"
                 className="p-1 font-medium"
             >
-                <a href="#" className="flex items-center hover:text-blue-500 transition-colors font-bold">
+                <NavLink to='/donation' className={({ isActive }) => isActive ? 'text-red-500 underline font-bold' : 'font-bold'}>
                     Donation
-                </a>
+                </NavLink>
             </Typography>
             <Typography
                 as="li"
@@ -37,9 +37,9 @@ function NavList() {
                 color="blue-gray"
                 className="p-1 font-medium"
             >
-                <a href="#" className="flex items-center hover:text-blue-500 transition-colors font-bold">
+                <NavLink to='/statistics' className={({ isActive }) => isActive ? 'text-red-500 underline font-bold' : 'font-bold'}>
                     Statistics
-                </a>
+                </NavLink>
             </Typography>
         </ul>
     );
