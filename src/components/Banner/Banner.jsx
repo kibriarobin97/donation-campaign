@@ -9,7 +9,7 @@ const Banner = () => {
             <div className="absolute inset-0 bg-[url('https://i.ibb.co/dWJYmwk/donation.jpg')] bg-no-repeat bg-bottom object-cover bg-cover opacity-25">
                 
             </div>    
-            <Typography variant="h2">I Grow By Helping People In Need</Typography>
+            <Typography variant="h2" className="ml-4 md:ml-0">I Grow By Helping People In Need</Typography>
             <div className="relative flex w-full max-w-[20rem] mt-5">
                 <Input
                     type="text"
