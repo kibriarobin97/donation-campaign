@@ -9,6 +9,7 @@ import {
     Button,
     
 } from "@material-tailwind/react";
+import saveStorage from "../../utils/localStorage";
 
 const DonationDetails = () => {
     const [singleData, setSingleData] = useState({})
@@ -21,19 +22,23 @@ const DonationDetails = () => {
             setSingleData(singlesData)
         }
     }, [data, id]);
-    
+
+    const handleDonate = () => {
+        saveStorage(singleData)
+    }
+    console.log(singleData)
     const { title, image, description, price} = singleData || {};
 
     return (
         <Card className="max-w-7xl mx-auto my-5 overflow-hidden rounded-lg pt-7 shadow-none">
-            <CardHeader color="blue-gray" className="relative md:h-96 relative">
+            <CardHeader color="blue-gray" className="relative md:h-96">
                 <img
                     src={image}
                     alt="card-image"
                     className="w-full h-full object-cover bg-center"
                 />
                 <div className="absolute bg-black bg-opacity-40 bottom-0 w-full h-20 pl-3 md:pl-5">
-                <Button className="mt-4 normal-case text-xl" color="red">Donate ${price}</Button>
+                <Button onClick={()=>handleDonate()} className="mt-4 normal-case text-xl" color="red">Donate ${price}</Button>
                 </div>
             </CardHeader>
             <CardBody>
